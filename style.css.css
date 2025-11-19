@@ -1,55 +1,70 @@
 /* ===== General Body ===== */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+
+  /* New healthcare-themed background image */
+  background-image: url('https://wallpapercave.com/wp/wp6938258.jpg');
+  background-size: cover;          /* cover the entire screen */
+  background-position: center;     /* center the image */
+  background-repeat: no-repeat;    /* no tiling */
+  background-attachment: fixed;    /* stays fixed when scrolling */
+
+  /* Dark overlay to improve readability */
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: overlay;  
+
   color: #fff;
-  background: url('https://images.unsplash.com/photo-1588776814546-2e4f832c519f?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
-  background-size: cover;
+  line-height: 1.6;
 }
 
 /* ===== Header ===== */
 .header {
   text-align: center;
   padding: 4rem 1rem;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
-  border-bottom: 2px solid #ade8f4;
+  background: linear-gradient(135deg, rgba(0,150,136,0.6), rgba(0,188,212,0.6));
+  border-bottom: 3px solid #00acc1;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
 }
 
 .header h1 {
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 800;
   margin: 0;
-  color: #ade8f4;
-  text-shadow: 2px 2px 6px #000;
+  color: #e0f7fa;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 
 .header p {
   font-size: 1.3rem;
   margin-top: 0.5rem;
-  color: #e0f7fa;
-  text-shadow: 1px 1px 4px #000;
+  color: #b2ebf2;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
 }
 
 /* ===== Main Container ===== */
 .container {
-  max-width: 700px;
-  margin: 2rem auto;
+  max-width: 720px;
+  margin: 3rem auto;
   padding: 0 1rem;
 }
 
 /* ===== Card Styling ===== */
 .card {
-  background: rgba(0, 0, 0, 0.55); /* semi-transparent */
-  margin-bottom: 1rem;
-  border-radius: 15px;
+  background: linear-gradient(145deg, rgba(0,0,0,0.6), rgba(0,0,0,0.7));
+  margin-bottom: 1.5rem;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+  background: linear-gradient(145deg, rgba(0,150,136,0.7), rgba(0,188,212,0.7));
 }
 
 /* ===== Accordion Buttons ===== */
@@ -59,22 +74,28 @@ body {
   border: none;
   outline: none;
   cursor: pointer;
-  padding: 1.2rem 1rem;
+  padding: 1.3rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #ade8f4;
-  transition: background 0.3s ease;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #00e5ff;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .accordion:hover {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.15);
+  color: #ffd600;
 }
 
 .accordion i {
   margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.accordion.active i {
+  transform: rotate(180deg);
 }
 
 .acc-left i {
@@ -85,28 +106,41 @@ body {
 .panel {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.35s ease;
+  transition: max-height 0.35s ease, padding 0.3s ease;
   padding: 0 1rem;
 }
 
 .panel a {
   display: block;
-  margin: 0.6rem 0;
-  color: #e0f7fa;
+  margin: 0.7rem 0;
+  color: #b2ebf2;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease, transform 0.2s ease;
+  border-left: 3px solid transparent;
+  padding-left: 8px;
+  transition: color 0.3s ease, transform 0.2s ease, border-left 0.3s ease;
 }
 
 .panel a:hover {
-  color: #ffcc80;
+  color: #ffd600;
   transform: translateX(5px);
+  border-left: 3px solid #ffd600;
 }
 
 .panel p {
   font-size: 0.95rem;
   color: #cfd8dc;
-  margin: 0.5rem 0;
+  margin: 0.5rem 0 1rem;
+}
+
+/* ===== Scrollbar Styling ===== */
+.panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.panel::-webkit-scrollbar-thumb {
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 3px;
 }
 
 /* ===== Responsive ===== */
@@ -114,11 +148,9 @@ body {
   .header h1 {
     font-size: 2.2rem;
   }
-
   .header p {
     font-size: 1.1rem;
   }
-
   .accordion {
     font-size: 1rem;
   }
