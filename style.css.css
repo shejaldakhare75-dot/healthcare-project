@@ -1,0 +1,125 @@
+/* ===== General Body ===== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  background: url('https://images.unsplash.com/photo-1588776814546-2e4f832c519f?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* ===== Header ===== */
+.header {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+  border-bottom: 2px solid #ade8f4;
+}
+
+.header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+  color: #ade8f4;
+  text-shadow: 2px 2px 6px #000;
+}
+
+.header p {
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  color: #e0f7fa;
+  text-shadow: 1px 1px 4px #000;
+}
+
+/* ===== Main Container ===== */
+.container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* ===== Card Styling ===== */
+.card {
+  background: rgba(0, 0, 0, 0.55); /* semi-transparent */
+  margin-bottom: 1rem;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+}
+
+/* ===== Accordion Buttons ===== */
+.accordion {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 1.2rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ade8f4;
+  transition: background 0.3s ease;
+}
+
+.accordion:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.accordion i {
+  margin-left: 0.5rem;
+}
+
+.acc-left i {
+  margin-right: 0.5rem;
+}
+
+/* ===== Accordion Panel ===== */
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  padding: 0 1rem;
+}
+
+.panel a {
+  display: block;
+  margin: 0.6rem 0;
+  color: #e0f7fa;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.panel a:hover {
+  color: #ffcc80;
+  transform: translateX(5px);
+}
+
+.panel p {
+  font-size: 0.95rem;
+  color: #cfd8dc;
+  margin: 0.5rem 0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2.2rem;
+  }
+
+  .header p {
+    font-size: 1.1rem;
+  }
+
+  .accordion {
+    font-size: 1rem;
+  }
+}
